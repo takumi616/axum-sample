@@ -3,4 +3,13 @@ name = "axum-sample"
 version = "0.1.0"
 edition = "2021"
 
+[workspace]
+members = ["adapter"]
+
+[workspace.dependencies]
+adapter = { path = "./adapter" }
+
 [dependencies]
+axum = "0.8.1"
+tokio = { version = "1.43.0", features = ["macros", "rt-multi-thread"] }
+adapter.workspace = true
